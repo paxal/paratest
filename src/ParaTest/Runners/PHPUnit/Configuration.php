@@ -34,7 +34,7 @@ class Configuration
     public function __construct($path)
     {
         $this->path = $path;
-        if(file_exists($path))
+        if(file_exists($path) && !is_dir($path))
             $this->xml = simplexml_load_file($path);
     }
     
